@@ -1,0 +1,6 @@
+HƯỚNG DẪN SETUP hYAR 
+
+bước 1: CẤP QUYỀN CHO FILE setup.sh 
+bash: chmod +x home/duong/dan/setup.sh
+bước 2: chạy file setup.sh
+bash: home/duong/dan/setup.sh

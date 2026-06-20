@@ -1,0 +1,70 @@
+{
+    "layer": "top",
+    "position": "auto",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 20,
+    "modules-left": ["hyprland/workspaces", "hyprland/window", "clock"],
+    "modules-center": ["custom/aura"],
+    "modules-right": ["network", "bluetooth", "pulseaudio", "battery", "temperature", "tray", "custom/power"],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "default": ""
+        }
+    },
+    "hyprland/window": {
+        "format": " {title} ",
+        "max-length": 40,
+        "separate-outputs": true
+    },
+    "clock": {
+        "format": "{:%H:%M  %d/%m}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": "Connected",
+        "format-disconnected": "Disconnected",
+        "on-click": "nm-connection-editor"
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "on-click": "blueman-manager"
+    },
+    "pulseaudio": {
+        "format": "audio {volume}%",
+        "format-muted": "Muted",
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "states": { "good": 95, "warning": 30, "critical": 15 },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "temperature": {
+        "format": "{temperatureC}°C",
+        "hwmon-path": "/sys/class/hwmon/hwmon0/temp1_input"
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "custom/aura": {
+        "format": "Shining Aura"
+    },
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout"
+    }
+}

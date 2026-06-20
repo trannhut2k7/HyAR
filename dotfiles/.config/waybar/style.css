@@ -1,154 +1,221 @@
-/* * {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; 
-    font-size: 14px ;
-}
-
-
-window#waybar {
-    background-color: rgba(26, 27, 38, 0.85);
-    color: #c0caf5;
-    transition-property: background-color;
-    transition-duration: .5s;
-}
-
-#workspaces {
-    margin : 2px;
-    margin-right: 5px ;
-    border-radius: 5px; 
-}
-
-#workspaces button {
-    color : black ; 
-    border-radius: 40%;
-    border-color: blanchedalmond;
-    border-width: 0px; 
-}
-#workspaces button.active {
-    color: #7aa2f7;
-    border-bottom: 3px solid #7aa2f7;
-}
-#workspaces button:hover {
-    background-color: red;
-    color: burlywood;
-    border-bottom : 3px solid #7aa2f7; 
-    box-shadow: inherit;
-} */
-
+/* ═══════════════════════════════════════════════
+   Waybar - Glassmorphism + Pill Style (bản an toàn)
+   ═══════════════════════════════════════════════ */
 
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(26, 27, 38, 0.85); /* Màu tối mờ trong suốt */
-    color: #c0caf5;
-    transition-property: background-color;
-    transition-duration: .5s;
-    border-radius: 10px
+    background-color: rgba(20, 20, 30, 0.45);
+    color: #e8e8f0;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 6px 10px;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+    opacity: 0;
+}
+
+#workspaces {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 999px;
+    margin: 6px 4px;
+    padding: 2px 4px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 2px 10px;
+    margin: 2px;
+    border-radius: 999px;
+    color: rgba(232, 232, 240, 0.5);
     background-color: transparent;
-    color: #a9b1d6;
-    border-bottom: 3px solid transparent;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-    box-shadow: inherit;
-    border-bottom: 3px solid #7aa2f7;
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #e8e8f0;
 }
 
 #workspaces button.active {
-    color: #7aa2f7;
-    border-bottom: 3px solid #7aa2f7;
+    background-color: rgba(186, 156, 247, 0.35);
+    color: #e8d9ff;
+    min-width: 22px;
 }
 
 #workspaces button.urgent {
-    background-color: #f7768e;
+    background-color: rgba(247, 118, 142, 0.45);
+    color: #ffd5dc;
 }
 
-#window,
+#window {
+    background-color: transparent;
+    color: rgba(232, 232, 240, 0.7);
+    font-style: italic;
+    padding: 0 12px;
+    margin: 6px 2px;
+}
+
+#custom-aura {
+    background-color: rgba(186, 156, 247, 0.28);
+    border: 1px solid rgba(186, 156, 247, 0.55);
+    color: #c9a8ff;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    border-radius: 999px;
+    padding: 3px 22px;
+    margin: 6px 4px;
+    animation-name: aura-glow;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes aura-glow {
+    0% {
+        background-color: rgba(186, 156, 247, 0.28);
+        border-color: rgba(186, 156, 247, 0.55);
+    }
+    50% {
+        background-color: rgba(186, 156, 247, 0.48);
+        border-color: rgba(186, 156, 247, 0.85);
+    }
+    100% {
+        background-color: rgba(186, 156, 247, 0.28);
+        border-color: rgba(186, 156, 247, 0.55);
+    }
+}
+
 #clock,
 #network,
 #bluetooth,
 #pulseaudio,
 #battery,
+#temperature,
 #tray,
-#temperature {
-    padding: 0 12px;
-    margin: 2px 2px;
-    background-color: #24283b;
-    border-radius: 8px;
+#custom-power {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 999px;
+    padding: 2px 14px;
+    margin: 6px 3px;
 }
 
-#window {
-    background-color: transparent;
+#clock:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#battery:hover,
+#temperature:hover,
+#custom-power:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.18);
 }
 
 #clock {
-    color: #7aa2f7;
+    color: #9ecbff;
 }
 
 #network {
-    color: #b4f9a8;
+    color: #a8f0c6;
+}
+
+#network.disconnected {
+    color: rgba(232, 232, 240, 0.35);
 }
 
 #bluetooth {
-    color: #7da6ff;
+    color: #9ecbff;
+}
+
+#bluetooth.disabled {
+    color: rgba(232, 232, 240, 0.35);
 }
 
 #pulseaudio {
-    color: #e0af68;
+    color: #ffd699;
 }
 
 #pulseaudio.muted {
-    color: #f7768e;
+    color: rgba(232, 232, 240, 0.35);
 }
 
 #battery {
-    color: #9ece6a;
+    color: #a8f0c6;
 }
 
-#battery.charging, #battery.plugged {
-    color: #9ece6a;
+#battery.charging,
+#battery.plugged {
+    color: #a8f0c6;
 }
 
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+#battery.warning:not(.charging) {
+    color: #ffd699;
+    background-color: rgba(255, 214, 153, 0.12);
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f7768e;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
+    color: #ffaab3;
+    background-color: rgba(255, 170, 179, 0.18);
+    border-color: rgba(255, 170, 179, 0.3);
+    animation-name: pulse-critical;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
-
-#custom-power{
-    font-size: 25px;
-    color : red ;
-    margin: 0 10 ; 
+@keyframes pulse-critical {
+    0% {
+        background-color: rgba(255, 170, 179, 0.18);
+    }
+    50% {
+        background-color: rgba(255, 170, 179, 0.35);
+    }
+    100% {
+        background-color: rgba(255, 170, 179, 0.18);
+    }
 }
 
-#custom-aura {
-    padding-left : 5px ; 
-    color: red ; 
-    font-size: 25;
+#temperature {
+    color: #ffb88c;
+}
+
+#temperature.critical {
+    color: #ffaab3;
+}
+
+#tray {
+    padding: 2px 12px;
+}
+
+#custom-power {
+    background-color: rgba(247, 118, 142, 0.18);
+    border: 1px solid rgba(247, 118, 142, 0.3);
+    color: #ffaab3;
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+#custom-power:hover {
+    background-color: rgba(247, 118, 142, 0.35);
+    color: #ffd5dc;
+}
+
+tooltip {
+    background-color: rgba(20, 20, 30, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #e8e8f0;
+}
+
+tooltip label {
+    color: #e8e8f0;
 }

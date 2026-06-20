@@ -41,10 +41,15 @@ hl.config({
         },
 
         blur = {
-            enabled   = true,
-            size      = 3,
-            passes    = 1,
-            vibrancy  = 0.1696,
+            enabled = true,
+            size    = 8,     -- Độ mạnh blur (4-12 là đẹp)
+            passes  = 3,     -- Số lần lặp blur (cao = mịn hơn, nặng máy hơn)
+            vibrancy = 0.2,  -- Độ rực màu xuyên qua kính
+
+            -- enabled   = true,
+            -- size      = 3,
+            -- passes    = 1,
+            -- vibrancy  = 0.1696,
         },
     },
 

@@ -30,6 +30,7 @@ local menu        = "hyprlauncher"
 
 hl.on("hyprland.start", function () 
   hl.exec_cmd("waybar & firefox")
+  hl.exec_cmd("~/.config/wallpaper/wallpaper.sh")
 end)
 
 

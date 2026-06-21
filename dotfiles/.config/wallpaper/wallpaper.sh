@@ -6,7 +6,7 @@
 # ============================================================
 
 # --- CẤU HÌNH ---
-WALLPAPER_DIR="./picture"   # Thư mục chứa ảnh
+WALLPAPER_DIR="$HOME/.config/wallpaper/picture"   # Thư mục chứa ảnh
 INTERVAL=30                                   # Thời gian (giây), 300 = 5 phút
 TRANSITION="wipe"                              # Kiểu chuyển cảnh: wipe, fade, left, right, top, bottom, wave, random
 TRANSITION_DURATION=1.5                        # Thời gian chuyển cảnh (giây)

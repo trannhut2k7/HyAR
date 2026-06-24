@@ -13,7 +13,6 @@ require("input")
 require("keyBinding")
 require("environment")
 
-layout = "master"
 
 -------------------
 ---- AUTOSTART ----
